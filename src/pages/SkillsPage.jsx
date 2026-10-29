@@ -6,6 +6,11 @@ export function SkillsPage({ activeFilter, onFilterChange }) {
   const skills = skillsData.columns
     .flat()
     .filter((skill) => (skill.section ?? "stacks") === "stacks");
+  const galleryColumns = [
+    skills.slice(0, 3),
+    skills.slice(3, 5),
+    skills.slice(5),
+  ];
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8 pb-28 md:px-6 md:py-10 md:pb-28">
@@ -27,15 +32,24 @@ export function SkillsPage({ activeFilter, onFilterChange }) {
 
       <section
         aria-label="Skills"
-        className="mt-[30px] grid grid-cols-1 gap-[9px] sm:grid-cols-2 md:grid-cols-3"
+        className="mt-[30px] grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.9fr)_minmax(0,1.15fr)]"
       >
-        {skills.map((skill) => (
-          <SkillCard
-            key={skill.title}
-            skill={skill}
-            logoMap={skillsData.logoMap}
-            dimmed={activeFilter !== "all" && activeFilter !== skill.category}
-          />
+        {galleryColumns.map((column, columnIndex) => (
+          <div
+            key={columnIndex}
+            className="contents lg:block lg:space-y-3"
+          >
+            {column.map((skill) => (
+              <SkillCard
+                key={skill.title}
+                skill={skill}
+                logoMap={skillsData.logoMap}
+                dimmed={
+                  activeFilter !== "all" && activeFilter !== skill.category
+                }
+              />
+            ))}
+          </div>
         ))}
       </section>
     </main>

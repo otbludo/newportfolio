@@ -5,12 +5,12 @@ export function SkillCard({ skill, logoMap, dimmed }) {
 
   return (
     <article
-      className={`flex flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-opacity duration-200 ease-out ${
+      className={`flex w-full flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-opacity duration-200 ease-out ${
         skill.minH ?? ""
       } ${dimmed ? "opacity-35" : "opacity-100"}`}
     >
       {logoBadges.length > 0 && (
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap justify-start gap-6 md:justify-center">
           {logoBadges.map((badge) => (
             <LogoBadge
               key={getBadgeLabel(badge)}
