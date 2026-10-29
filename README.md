@@ -82,7 +82,7 @@ vite.config.js         Configuration Vite
 ## Déploiement
 
 Le projet peut être déployé sur Vercel avec les paramètres par défaut d’un
-projet Vite. La variable `VERCEL_URL` fournie pendant le build sert à produire
-l’URL absolue de `profile.png` dans les métadonnées de partage. Ces métadonnées
-sont lues par les services de partage lorsqu’ils récupèrent la page publique ;
-leur aperçu peut prendre du temps à s’actualiser s’il est mis en cache.
+projet Vite. Les métadonnées de partage utilisent l’URL publique stable
+`https://otabelaludovic.vercel.app/profile.png` pour éviter de référencer une
+URL de déploiement Vercel qui peut être protégée par une connexion. Les services
+de partage peuvent mettre en cache l’aperçu et mettre du temps à l’actualiser.
