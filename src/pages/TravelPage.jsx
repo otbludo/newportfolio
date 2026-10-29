@@ -9,7 +9,6 @@ const travelDestinations = [
     location: [46.2276, 2.2137],
     photos: ["/imgvoyages/france1.jpg", "/imgvoyages/france2.jpg"],
   },
-  
   {
     country: "Cameroun",
     flag: "🇨🇲",
@@ -52,8 +51,8 @@ export function TravelPage() {
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-8 pb-28 md:px-6 md:py-10">
       <header className="mb-8">
-        <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
-          <span className="h-1.5 w-1.5 rounded-full bg-slate-600" />
+        <span className="inline-flex items-center gap-2 rounded-full bg-slate-200 px-3 py-1 text-xs font-medium text-slate-800">
+          <span className="h-1.5 w-1.5 rounded-full bg-slate-700" />
           Voyages
         </span>
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
@@ -102,7 +101,7 @@ export function TravelPage() {
                   className={`rounded-full px-3 py-1.5 text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-600 ${
                     destination === item
                       ? "bg-slate-900 text-white"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                      : "bg-slate-200 text-slate-700 hover:bg-slate-300"
                   }`}
                 >
                   {item.country}
@@ -114,7 +113,7 @@ export function TravelPage() {
                 type="button"
                 aria-label="Photo précédente"
                 onClick={() => selectPhoto(-1)}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-600"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:bg-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-600"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
@@ -122,7 +121,7 @@ export function TravelPage() {
                 type="button"
                 aria-label="Photo suivante"
                 onClick={() => selectPhoto(1)}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-600"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:bg-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-600"
               >
                 <ChevronRight className="h-4 w-4" />
               </button>

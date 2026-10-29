@@ -21,7 +21,7 @@ export function BottomNavigation({ activeSection, onSectionChange, onHome }) {
         className={`flex h-11 w-11 items-center justify-center rounded-full shadow-lg shadow-slate-900/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-600/40 ${
           activeSection === "home"
             ? "bg-black text-white"
-            : "bg-white text-slate-700 hover:bg-slate-100"
+            : "bg-white text-slate-700 hover:bg-slate-200"
         }`}
       >
         <Home aria-hidden="true" className="h-5 w-5" />
@@ -41,7 +41,7 @@ export function BottomNavigation({ activeSection, onSectionChange, onHome }) {
                   className={`flex h-11 w-11 items-center justify-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-600/40 ${
                     isActive
                       ? "bg-black text-white"
-                      : "text-slate-500 hover:bg-slate-100"
+                      : "text-slate-500 hover:bg-slate-200"
                   }`}
                 >
                   <Icon aria-hidden="true" className="h-5 w-5" />

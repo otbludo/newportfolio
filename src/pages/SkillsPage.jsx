@@ -10,8 +10,8 @@ export function SkillsPage({ activeFilter, onFilterChange }) {
   return (
     <main className="mx-auto max-w-5xl px-4 py-8 pb-28 md:px-6 md:py-10 md:pb-28">
       <header className="mb-8 text-center">
-        <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
-          <span className="h-1.5 w-1.5 rounded-full bg-slate-600" />
+        <span className="inline-flex items-center gap-2 rounded-full bg-slate-200 px-3 py-1 text-xs font-medium text-slate-800">
+          <span className="h-1.5 w-1.5 rounded-full bg-slate-700" />
           Compétences
         </span>
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">

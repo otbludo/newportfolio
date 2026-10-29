@@ -15,7 +15,7 @@ export function SkillsFilter({ filters, activeFilter, onFilterChange }) {
               className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-600/40 ${
                 isActive
                   ? "bg-black text-white"
-                  : "text-slate-500 hover:bg-slate-100"
+                  : "text-slate-500 hover:bg-slate-200"
               }`}
             >
               <Icon aria-hidden="true" className="h-[18px] w-[18px]" />

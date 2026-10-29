@@ -113,8 +113,8 @@ export function ExperiencePage() {
     <div className="min-h-full bg-slate-50 px-4 py-8 text-slate-900 sm:px-6 md:px-10 md:py-12">
       <main className="mx-auto max-w-5xl">
         <header className="mb-10">
-          <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
-            <span className="h-1.5 w-1.5 rounded-full bg-slate-600" />
+          <span className="inline-flex items-center gap-2 rounded-full bg-slate-200 px-3 py-1 text-xs font-medium text-slate-800">
+            <span className="h-1.5 w-1.5 rounded-full bg-slate-700" />
             Parcours professionnel
           </span>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
@@ -130,62 +130,60 @@ export function ExperiencePage() {
           <h2 id="experiences-heading" className="sr-only">
             Expériences professionnelles
           </h2>
-          <div className="space-y-5">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
             {experiences.map((experience) => (
               <article
                 key={experience.company}
-                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+                className="border-b border-dashed border-slate-200 p-5 last:border-b-0 sm:p-6"
               >
-                <div className="p-5 sm:p-6">
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-slate-100 bg-white p-2">
-                      <img
-                        src={experience.logo}
-                        alt={`Logo ${experience.company}`}
-                        className="h-full w-full object-contain"
-                      />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
-                        <div>
-                          <h3 className="text-lg font-semibold leading-snug text-slate-900">
-                            {experience.role}
-                          </h3>
-                          <p className="mt-1 text-sm font-medium text-slate-700">
-                            {experience.company}
-                          </p>
-                        </div>
-                        <span className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
-                          <CalendarDays className="h-3.5 w-3.5" />
-                          {experience.period}
-                        </span>
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-slate-100 bg-white p-2">
+                    <img
+                      src={experience.logo}
+                      alt={`Logo ${experience.company}`}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+                      <div>
+                        <h3 className="text-lg font-semibold leading-snug text-slate-900">
+                          {experience.role}
+                        </h3>
+                        <p className="mt-1 text-sm font-medium text-slate-700">
+                          {experience.company}
+                        </p>
                       </div>
-
-                      <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-slate-600">
-                        {experience.highlights.map((highlight, index) => (
-                          <Fragment key={index}>
-                            <li className="flex gap-2.5">
-                              <span
-                                aria-hidden="true"
-                                className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-slate-600"
-                              />
-                              <span>{highlight}</span>
-                            </li>
-                            {experience.architectureSections
-                              ?.filter((section) => section.afterHighlight === index)
-                              .map((section) => (
-                                <li key={section.title} className="list-none">
-                                  <ArchitecturePlaceholder
-                                    company={experience.company}
-                                    title={section.title}
-                                    image={section.image}
-                                  />
-                                </li>
-                              ))}
-                          </Fragment>
-                        ))}
-                      </ul>
+                      <span className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+                        <CalendarDays className="h-3.5 w-3.5" />
+                        {experience.period}
+                      </span>
                     </div>
+
+                    <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-slate-600">
+                      {experience.highlights.map((highlight, index) => (
+                        <Fragment key={index}>
+                          <li className="flex gap-2.5">
+                            <span
+                              aria-hidden="true"
+                              className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-slate-600"
+                            />
+                            <span>{highlight}</span>
+                          </li>
+                          {experience.architectureSections
+                            ?.filter((section) => section.afterHighlight === index)
+                            .map((section) => (
+                              <li key={section.title} className="list-none">
+                                <ArchitecturePlaceholder
+                                  company={experience.company}
+                                  title={section.title}
+                                  image={section.image}
+                                />
+                              </li>
+                            ))}
+                        </Fragment>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </article>
@@ -195,7 +193,7 @@ export function ExperiencePage() {
 
         <section aria-labelledby="projects-heading" className="mt-12">
           <div className="mb-5 flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-200 text-slate-800">
               <FolderKanban className="h-5 w-5" />
             </div>
             <div>
