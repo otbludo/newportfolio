@@ -1,0 +1,17 @@
+{
+  "name": "Portfolio d’Otabela",
+  "short_name": "OT",
+  "description": "Portfolio d’Otabela, développeur Full-Stack spécialisé en IA et Big Data.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/profile.png",
+      "sizes": "2730x4096",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
