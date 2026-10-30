@@ -1,22 +1,25 @@
 import { BriefcaseBusiness, Home, Layers, Plane } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const sections = [
-  { id: "stacks", label: "Stacks", Icon: Layers },
-  { id: "projects", label: "Projets réalisés", Icon: BriefcaseBusiness },
-  { id: "travel", label: "Voyages", Icon: Plane },
+  { id: "stacks", Icon: Layers },
+  { id: "projects", Icon: BriefcaseBusiness },
+  { id: "travel", Icon: Plane },
 ];
 
 export function BottomNavigation({ activeSection, onSectionChange, onHome }) {
+  const { t } = useTranslation();
+
   return (
     <nav
-      aria-label="Navigation principale"
+      aria-label={t("navigation.main")}
       className="fixed bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3"
     >
       <button
         type="button"
-        aria-label="Accueil"
+        aria-label={t("navigation.home")}
         aria-pressed={activeSection === "home"}
-        title="Accueil"
+        title={t("navigation.home")}
         onClick={onHome}
         className={`flex h-11 w-11 items-center justify-center rounded-full shadow-lg shadow-slate-900/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-600/40 ${
           activeSection === "home"
@@ -28,8 +31,9 @@ export function BottomNavigation({ activeSection, onSectionChange, onHome }) {
       </button>
       <div className="rounded-full border border-slate-200 bg-white p-1.5 shadow-lg shadow-slate-900/10">
         <ul className="flex items-center gap-1">
-          {sections.map(({ id, label, Icon }) => {
+          {sections.map(({ id, Icon }) => {
             const isActive = id === activeSection;
+            const label = t(`navigation.sections.${id}`);
             return (
               <li key={id}>
                 <button

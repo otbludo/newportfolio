@@ -1,34 +1,39 @@
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
-
-const MARQUEE_TEXT = "DATA ENGINEER & DÉVELOPPEUR FULL-STACK IA —";
+import { useTranslation } from "react-i18next";
+import { Toggle } from "../components/ui/toggle.jsx";
 
 export function HomePage({ onProjectsClick }) {
   const reduceMotion = useReducedMotion();
+  const { t } = useTranslation();
+  const marqueeText = t("home.marquee");
 
   return (
     <main className="relative min-h-[min(100svh,900px)] w-full overflow-hidden bg-white text-slate-900">
-      <header className="relative z-30 flex justify-end px-5 pt-5 sm:px-8 sm:pt-6 lg:px-12 lg:pt-8">
+      <header className="relative z-30 flex justify-end px-5 pt-5 sm:justify-between sm:px-8 sm:pt-6 lg:px-12 lg:pt-8">
+        <div className="hidden sm:block">
+          <Toggle />
+        </div>
         <div className="max-w-[min(100%,36rem)] text-right">
           <h1 className="text-xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-2xl lg:text-3xl">
-            Salut, je suis Ludovic OTABELA, <br />mais vous pouvez m’appeler OT.
+            {t("home.greeting")} <br />
+            {t("home.greetingSuffix")}
           </h1>
           <p className="mt-3 text-sm font-medium text-slate-700 sm:text-base">
-            DATA ENGINEER & DÉVELOPPEUR FULL-STACK IA
+            {t("home.profession")}
           </p>
           <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
-            Je conçois et développe des applications multiplateforme modernes et des
-            solutions intelligentes en IA et Big Data.
+            {t("home.description")}
           </p>
           <nav
-            aria-label="Réseaux sociaux"
-            className="mt-5 flex justify-end gap-4 text-slate-500"
+            aria-label={t("home.socialLinks")}
+            className="mt-5 mb-5 sm:mb-auto flex justify-end gap-4 text-slate-500"
           >
             <a
               href="https://github.com/otbludo"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub — otbludo (ouvre un nouvel onglet)"
+              aria-label={t("home.github")}
               className="rounded transition-colors hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-600"
             >
               <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
@@ -39,21 +44,25 @@ export function HomePage({ onProjectsClick }) {
               href="https://www.linkedin.com/in/ludovic-otabela-035187317/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn — Ludovic Otabela (ouvre un nouvel onglet)"
+              aria-label={t("home.linkedin")}
               className="rounded transition-colors hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-600"
             >
               <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
             </a>
+
           </nav>
+          <div className="sm:hidden">
+            <Toggle />
+          </div>
         </div>
       </header>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-center">
         <img
           src="/profile.png"
-          alt="Portrait d’Otabela"
+          alt={t("home.portrait")}
           className="h-[66svh] w-auto max-w-none object-cover object-top sm:h-[76svh] lg:h-[84svh]"
           style={{
             WebkitMaskImage:
@@ -66,7 +75,7 @@ export function HomePage({ onProjectsClick }) {
 
       <button
         type="button"
-        aria-label="Voir mes projets"
+        aria-label={t("home.projects")}
         onClick={onProjectsClick}
         className="group absolute right-5 top-[38%] z-30 flex h-12 w-12 items-center justify-center rounded-full border border-slate-900/60 transition-colors duration-200 hover:bg-slate-900 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 sm:right-[18%] sm:h-16 sm:w-16 lg:right-[30%] lg:h-20 lg:w-20"
       >
@@ -79,7 +88,7 @@ export function HomePage({ onProjectsClick }) {
 
       <div
         className="absolute inset-x-0 bottom-[14%] z-20 overflow-hidden sm:bottom-[12%] lg:bottom-[10%]"
-        aria-label={MARQUEE_TEXT}
+        aria-label={marqueeText}
       >
         <motion.div
           className="flex w-max whitespace-nowrap"
@@ -92,7 +101,7 @@ export function HomePage({ onProjectsClick }) {
               key={index}
               className="pr-[0.3em] text-[24vw] font-normal leading-none tracking-tight sm:text-[17vw] lg:text-[13vw]"
             >
-              {MARQUEE_TEXT}
+              {marqueeText}
             </span>
           ))}
         </motion.div>

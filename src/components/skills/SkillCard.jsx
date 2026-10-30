@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 export function SkillCard({ skill, logoMap, dimmed }) {
+  const { t } = useTranslation();
   const logoBadges = (skill.badges ?? []).filter((badge) =>
     logoMap[getBadgeLabel(badge).toLowerCase()],
   );
@@ -23,10 +26,10 @@ export function SkillCard({ skill, logoMap, dimmed }) {
 
       <div className="mt-auto pt-4">
         <h2 className="text-base font-semibold leading-[1.3] text-slate-900">
-          {skill.title}
+          {t(`skills.cards.${skill.id}.title`)}
         </h2>
         <p className="mt-1.5 text-xs leading-relaxed text-slate-600">
-          {skill.description}
+          {t(`skills.cards.${skill.id}.description`)}
         </p>
       </div>
     </article>

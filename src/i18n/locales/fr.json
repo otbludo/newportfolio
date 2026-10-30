@@ -1,0 +1,175 @@
+{
+  "language": {
+    "switchToEnglish": "Passer en anglais",
+    "switchToFrench": "Passer en français",
+    "french": "FR",
+    "english": "EN"
+  },
+  "home": {
+    "greeting": "Salut, je suis Ludovic OTABELA,",
+    "greetingSuffix": "mais vous pouvez m’appeler OT.",
+    "profession": "DATA ENGINEER & DÉVELOPPEUR FULL-STACK IA",
+    "description": "Je conçois et développe des applications multiplateforme modernes et des solutions intelligentes en IA et Big Data.",
+    "socialLinks": "Réseaux sociaux",
+    "github": "GitHub — otbludo (ouvre un nouvel onglet)",
+    "linkedin": "LinkedIn — Ludovic Otabela (ouvre un nouvel onglet)",
+    "portrait": "Portrait d’Otabela",
+    "projects": "Voir mes projets",
+    "marquee": "DATA ENGINEER & DÉVELOPPEUR FULL-STACK IA —"
+  },
+  "navigation": {
+    "main": "Navigation principale",
+    "home": "Accueil",
+    "sections": {
+      "stacks": "Compétences",
+      "projects": "Projets réalisés",
+      "travel": "Voyages"
+    }
+  },
+  "footer": {
+    "eyebrow": "Pour découvrir la suite",
+    "line1": "Découvre mes projets",
+    "line2": "sur GitHub",
+    "github": "GitHub — otbludo (ouvre un nouvel onglet)"
+  },
+  "skills": {
+    "category": "Compétences",
+    "pageTitle": "Les compétences qui me passionnent",
+    "filtersLabel": "Filtres de compétences",
+    "chartTitle": "Graphique de contributions GitHub",
+    "chartRegion": "Graphique de contributions GitHub, défilement horizontal",
+    "chartAlt": "Mon graphique de contributions GitHub",
+    "filters": {
+      "all": "Toutes les compétences",
+      "frontend": "Développement frontend",
+      "backend": "Développement backend",
+      "tools": "Outils et projets",
+      "design": "Design"
+    },
+    "cards": {
+      "frontend": {
+        "title": "Développement frontend",
+        "description": "Création d’interfaces web accessibles et adaptatives."
+      },
+      "backend": {
+        "title": "Développement backend",
+        "description": "Conception d’API et de logique applicative côté serveur."
+      },
+      "databases": {
+        "title": "Bases de données",
+        "description": "Structuration et interrogation des données applicatives."
+      },
+      "devTools": {
+        "title": "Outils de développement",
+        "description": "Outils de collaboration, d’automatisation et de déploiement."
+      },
+      "dataAi": {
+        "title": "Data science et IA",
+        "description": "Bibliothèques d’analyse de données, de vision par ordinateur et d’apprentissage automatique."
+      },
+      "analyticsCloud": {
+        "title": "Analytique et cloud",
+        "description": "Plateformes d’analyse, de visualisation et services cloud."
+      },
+      "uiux": {
+        "title": "Design UI / UX",
+        "description": "Conception d’interfaces claires, cohérentes et centrées sur l’utilisateur."
+      },
+      "education": {
+        "title": "Formation",
+        "description": "Écoles et organismes de formation."
+      },
+      "organizations": {
+        "title": "Organisations et projets",
+        "description": "Organisations et identités de projets représentées dans mes réalisations."
+      },
+      "travelMedia": {
+        "title": "Voyages et médias",
+        "description": "Ressources liées aux voyages et à la musique."
+      }
+    }
+  },
+  "experience": {
+    "category": "Parcours professionnel",
+    "pageTitle": "Expériences professionnelles",
+    "intro": "Des projets en développement full-stack, intelligence artificielle, automatisation et ingénierie des données.",
+    "entriesLabel": "Expériences professionnelles",
+    "selection": "Sélection",
+    "projectsTitle": "Projets clés à forte valeur",
+    "viewProject": "Voir le projet",
+    "projectPreview": "Aperçu du projet {{title}}",
+    "projectPhotoPlaceholder": "Emplacement réservé à une photo de {{title}}",
+    "projectPhoto": "Photo du projet",
+    "logo": "Logo {{company}}",
+    "architecturePlaceholder": "Espace réservé — ajoutez ici le schéma d’architecture",
+    "architectureImage": "{{title}} — {{company}}",
+    "architectureDiagram": "Emplacement réservé au schéma d’architecture {{title}} {{company}}",
+    "entries": {
+      "onutech": {
+        "period": "Oct. 2025 — Juil. 2026",
+        "role": "Lead développeur Full-Stack & IA",
+        "highlights": [
+          "<strong>IA & recherche :</strong> création de l’agent <strong>ONUtech RAG</strong> (FastAPI, ChromaDB), réduisant de <strong>60 %</strong> le temps d’accès aux documents.",
+          "<strong>Automatisation :</strong> ingestion et traitement automatisés de flux avec l’API WhatsApp Business et des workflows n8n.",
+          "<strong>Architecture :</strong> direction technique et supervision de pipelines de données."
+        ],
+        "architecture": {
+          "pipeline": "Architecture du pipeline"
+        }
+      },
+      "colorix": {
+        "period": "Nov. 2025 — Jan. 2026",
+        "role": "Stagiaire IA & automatisation",
+        "highlights": [
+          "<strong>Devis intelligent :</strong> conception d’un agent IA sur mesure, réduisant de <strong>80 %</strong> le délai de traitement manuel."
+        ],
+        "architecture": {
+          "pipeline": "Architecture du pipeline"
+        }
+      },
+      "bunec": {
+        "period": "Mai 2025 — Sep. 2025",
+        "role": "Stagiaire Big Data & OCR",
+        "highlights": [
+          "<strong>Pipeline OCR :</strong> développement d’un modèle CNN-BiLSTM-CTC pour la transcription automatique de registres.",
+          "<strong>Pipeline ETL :</strong> double stockage (staging brut et production normalisée), gestion dynamique des schémas CSV, génération d’un identifiant unique composite (<em>uniqueid</em>) et synchronisation sécurisée avec PostgreSQL."
+        ],
+        "architecture": {
+          "ocr": "Architecture du pipeline OCR",
+          "etl": "Architecture du pipeline ETL"
+        }
+      }
+    },
+    "projects": {
+      "drep": {
+        "description": "Application de santé mobile multiplateforme."
+      },
+      "aeli": {
+        "description": "Plateforme e-commerce de mise en relation et de services dédiée à l’entrepreneuriat féminin."
+      }
+    }
+  },
+  "travel": {
+    "category": "Voyages",
+    "pageTitle": "Les endroits où je suis allé",
+    "countries": "France · Cameroun",
+    "sectionLabel": "Globe interactif et carnet de voyages",
+    "globeHint": "Fais tourner le globe, puis découvre une destination",
+    "album": "Dans mon carnet",
+    "previousPhoto": "Photo précédente",
+    "nextPhoto": "Photo suivante",
+    "countriesList": {
+      "france": "France",
+      "cameroon": "Cameroun"
+    },
+    "photoPlaceholder": "Emplacement réservé à une photo de {{country}}",
+    "photoCountry": "Photo de {{country}}",
+    "addPhotos": "Ajoute les photos dans public/imgvoyages/",
+    "memory": "Souvenir de voyage en {{country}}",
+    "journalDestination": "Une destination de mon carnet",
+    "flag": "Drapeau {{country}}"
+  },
+  "globe": {
+    "label": "Globe interactif avec des destinations de voyage"
+  }
+}

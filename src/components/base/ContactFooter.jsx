@@ -1,19 +1,23 @@
+import { useTranslation } from "react-i18next";
+
 export function ContactFooter() {
+  const { t } = useTranslation();
+
   return (
     <footer className="mx-auto flex w-full max-w-5xl items-end justify-between gap-6 px-4 pb-8 pt-10 md:px-6">
       <div>
-        <p className="text-[10px] text-slate-500">Pour découvrir la suite</p>
+        <p className="text-[10px] text-slate-500">{t("footer.eyebrow")}</p>
         <h2 className="mt-2 text-[22px] font-medium leading-[1.25] tracking-[-0.01em] md:text-[24px]">
-          Découvre mes projets
+          {t("footer.line1")}
           <br />
-          sur GitHub
+          {t("footer.line2")}
         </h2>
       </div>
       <a
         href="https://github.com/otbludo"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="GitHub — otbludo (ouvre un nouvel onglet)"
+        aria-label={t("footer.github")}
         className="mb-1 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-lg shadow-slate-900/20 transition-transform duration-150 ease-out hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-900/20"
       >
         <svg

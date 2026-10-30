@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import createGlobe from "cobe";
 import { useMotionValue, useSpring } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 const MOVEMENT_DAMPING = 100;
 
@@ -18,6 +19,7 @@ const GLOBE_CONFIG = {
 };
 
 export function Globe({ className = "", markers = [], location = [0, 0] }) {
+  const { t } = useTranslation();
   const canvasRef = useRef(null);
   const widthRef = useRef(0);
   const pointerInteracting = useRef(null);
@@ -94,7 +96,7 @@ export function Globe({ className = "", markers = [], location = [0, 0] }) {
     >
       <canvas
         ref={canvasRef}
-        aria-label="Globe interactif avec des destinations de voyage"
+        aria-label={t("globe.label")}
         role="img"
         className="h-full w-full cursor-grab opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         onPointerDown={(event) => {

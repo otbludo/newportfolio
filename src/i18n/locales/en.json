@@ -1,0 +1,175 @@
+{
+  "language": {
+    "switchToEnglish": "Switch to English",
+    "switchToFrench": "Switch to French",
+    "french": "FR",
+    "english": "EN"
+  },
+  "home": {
+    "greeting": "Hi, I'm Ludovic OTABELA,",
+    "greetingSuffix": "but you can call me OT.",
+    "profession": "DATA ENGINEER & FULL-STACK AI DEVELOPER",
+    "description": "I design and build modern cross-platform applications and intelligent AI and Big Data solutions.",
+    "socialLinks": "Social media",
+    "github": "GitHub — otbludo (opens in a new tab)",
+    "linkedin": "LinkedIn — Ludovic Otabela (opens in a new tab)",
+    "portrait": "Portrait of Otabela",
+    "projects": "View my projects",
+    "marquee": "DATA ENGINEER & FULL-STACK AI DEVELOPER —"
+  },
+  "navigation": {
+    "main": "Main navigation",
+    "home": "Home",
+    "sections": {
+      "stacks": "Skills",
+      "projects": "Projects",
+      "travel": "Travel"
+    }
+  },
+  "footer": {
+    "eyebrow": "Explore what’s next",
+    "line1": "Discover my projects",
+    "line2": "on GitHub",
+    "github": "GitHub — otbludo (opens in a new tab)"
+  },
+  "skills": {
+    "category": "Skills",
+    "pageTitle": "Skills that fuel my passion",
+    "filtersLabel": "Skill filters",
+    "chartTitle": "GitHub contribution graph",
+    "chartRegion": "GitHub contribution graph, horizontal scrolling",
+    "chartAlt": "My GitHub contribution graph",
+    "filters": {
+      "all": "All skills",
+      "frontend": "Frontend development",
+      "backend": "Backend development",
+      "tools": "Tools and projects",
+      "design": "Design"
+    },
+    "cards": {
+      "frontend": {
+        "title": "Frontend development",
+        "description": "Building responsive, accessible interfaces for the web."
+      },
+      "backend": {
+        "title": "Backend development",
+        "description": "Designing APIs and server-side application logic."
+      },
+      "databases": {
+        "title": "Databases",
+        "description": "Structuring and querying application data."
+      },
+      "devTools": {
+        "title": "Development tools",
+        "description": "Tools for collaboration, automation, and deployment."
+      },
+      "dataAi": {
+        "title": "Data science and AI",
+        "description": "Libraries for data analysis, computer vision, and machine learning."
+      },
+      "analyticsCloud": {
+        "title": "Analytics and cloud",
+        "description": "Platforms for analytics, visualization, and cloud services."
+      },
+      "uiux": {
+        "title": "UI / UX design",
+        "description": "Designing clear, consistent, user-centered interfaces."
+      },
+      "education": {
+        "title": "Education",
+        "description": "Schools and training organizations."
+      },
+      "organizations": {
+        "title": "Organizations and projects",
+        "description": "Organizations and project identities represented in my work."
+      },
+      "travelMedia": {
+        "title": "Travel and media",
+        "description": "Travel and music-related project assets."
+      }
+    }
+  },
+  "experience": {
+    "category": "Professional experience",
+    "pageTitle": "Professional experience",
+    "intro": "Projects in full-stack development, artificial intelligence, automation, and data engineering.",
+    "entriesLabel": "Professional experience",
+    "selection": "Featured",
+    "projectsTitle": "Selected high-impact projects",
+    "viewProject": "View project",
+    "projectPreview": "Preview of the {{title}} project",
+    "projectPhotoPlaceholder": "Placeholder for a photo of {{title}}",
+    "projectPhoto": "Project photo",
+    "logo": "{{company}} logo",
+    "architecturePlaceholder": "Placeholder — add the architecture diagram here",
+    "architectureImage": "{{title}} — {{company}}",
+    "architectureDiagram": "Placeholder for the {{title}} architecture diagram at {{company}}",
+    "entries": {
+      "onutech": {
+        "period": "Oct 2025 — Jul 2026",
+        "role": "Lead Full-Stack & AI Developer",
+        "highlights": [
+          "<strong>AI & Search:</strong> built the <strong>ONUtech RAG</strong> agent (FastAPI, ChromaDB), reducing document access time by <strong>60%</strong>.",
+          "<strong>Automation:</strong> automated data ingestion and processing with the WhatsApp Business API and n8n workflows.",
+          "<strong>Architecture:</strong> provided technical leadership and oversaw data pipelines."
+        ],
+        "architecture": {
+          "pipeline": "Pipeline architecture"
+        }
+      },
+      "colorix": {
+        "period": "Nov 2025 — Jan 2026",
+        "role": "AI & Automation Intern",
+        "highlights": [
+          "<strong>Smart quotes:</strong> designed a custom AI agent, reducing manual processing time by <strong>80%</strong>."
+        ],
+        "architecture": {
+          "pipeline": "Pipeline architecture"
+        }
+      },
+      "bunec": {
+        "period": "May 2025 — Sep 2025",
+        "role": "Big Data & OCR Intern",
+        "highlights": [
+          "<strong>OCR pipeline:</strong> developed a CNN-BiLSTM-CTC model to automatically transcribe registers.",
+          "<strong>ETL pipeline:</strong> implemented dual storage (raw staging and normalized production), dynamic CSV schema handling, composite unique ID generation (<em>uniqueid</em>), and secure PostgreSQL synchronization."
+        ],
+        "architecture": {
+          "ocr": "OCR pipeline architecture",
+          "etl": "ETL pipeline architecture"
+        }
+      }
+    },
+    "projects": {
+      "drep": {
+        "description": "Cross-platform mobile health application."
+      },
+      "aeli": {
+        "description": "E-commerce matchmaking and services platform supporting women’s entrepreneurship."
+      }
+    }
+  },
+  "travel": {
+    "category": "Travel",
+    "pageTitle": "Places I’ve visited",
+    "countries": "France · Cameroon",
+    "sectionLabel": "Interactive globe and travel journal",
+    "globeHint": "Spin the globe, then discover a destination",
+    "album": "In my travel journal",
+    "previousPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "countriesList": {
+      "france": "France",
+      "cameroon": "Cameroon"
+    },
+    "photoPlaceholder": "Placeholder for a photo of {{country}}",
+    "photoCountry": "Photo from {{country}}",
+    "addPhotos": "Add photos to public/imgvoyages/",
+    "memory": "Travel memory from {{country}}",
+    "journalDestination": "A destination in my travel journal",
+    "flag": "{{country}} flag"
+  },
+  "globe": {
+    "label": "Interactive globe with travel destinations"
+  }
+}

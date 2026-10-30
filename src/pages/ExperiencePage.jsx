@@ -6,81 +6,51 @@ import {
   Image,
   Workflow,
 } from "lucide-react";
+import { Trans, useTranslation } from "react-i18next";
+
+import { Toggle } from "../components/ui/toggle.jsx";
 
 const experiences = [
   {
-    period: "Oct. 2025 — Juil. 2026",
-    role: "Lead Développeur Full-Stack & IA",
+    id: "onutech",
     company: "ONUtech",
     logo: "/logoSkills/logo_onutech.png",
-    highlights: [
-      <>
-        <strong>IA & Search :</strong> création de l’agent <strong>ONUtech RAG</strong>{" "}
-        (FastAPI, ChromaDB), réduisant de <strong>60 %</strong> le temps d’accès aux
-        documents.
-      </>,
-      <>
-        <strong>Automation :</strong> ingestion et traitement automatisés de flux avec
-        la WhatsApp Business API et des workflows n8n.
-      </>,
-      <>
-        <strong>Architecture :</strong> direction technique et supervision de
-        pipelines de données.
-      </>,
-    ],
+    highlights: [0, 1, 2],
     architectureSections: [
       {
         afterHighlight: 2,
-        title: "Architecture du pipeline",
+        titleKey: "architecture.pipeline",
         image: "/imgexperience/rag.png",
       },
     ],
   },
   {
-    period: "Nov. 2025 — Jan. 2026",
-    role: "Stagiaire IA & Automation",
+    id: "colorix",
     company: "Colorix",
     logo: "/logoSkills/logo_colorix2.png",
-    highlights: [
-      <>
-        <strong>Devis intelligent :</strong> conception d’un agent IA sur mesure,
-        réduisant de <strong>80 %</strong> le délai de traitement manuel.
-      </>,
-    ],
+    highlights: [0],
     architectureSections: [
       {
         afterHighlight: 0,
-        title: "Architecture du pipeline",
+        titleKey: "architecture.pipeline",
         image: "/imgexperience/devis.png",
       },
     ],
   },
   {
-    period: "Mai 2025 — Sep. 2025",
-    role: "Stagiaire Big Data & OCR",
+    id: "bunec",
     company: "BUNEC",
     logo: "/logoSkills/logo_bunec.jpeg",
-    highlights: [
-      <>
-        <strong>Pipeline OCR :</strong> développement d’un modèle CNN-BiLSTM-CTC pour
-        la transcription automatique de registres.
-      </>,
-      <>
-        <strong>Pipeline ETL :</strong> double stockage (staging brut et production
-        normalisée), gestion dynamique des schémas CSV, génération d’un identifiant
-        unique composite (<em>uniqueid</em>) et synchronisation sécurisée avec
-        PostgreSQL.
-      </>,
-    ],
+    highlights: [0, 1],
     architectureSections: [
       {
         afterHighlight: 0,
-        title: "Architecture du pipeline OCR",
+        titleKey: "architecture.ocr",
         image: "/imgexperience/ocr.png",
       },
       {
         afterHighlight: 1,
-        title: "Architecture du pipeline ETL",
+        titleKey: "architecture.etl",
         image: "/imgexperience/etl.png",
       },
     ],
@@ -89,18 +59,18 @@ const experiences = [
 
 const projects = [
   {
+    id: "drep",
     year: "2026",
     title: "DREP by AHAVYA",
-    description: "Application de santé mobile multiplateforme.",
     technologies: ["FastAPI", "React Native", "PostgreSQL", "Redis", "NotchPay", "Stripe", "OVH VPS"],
     image: "/projets/drepbyhavavya.png",
     mobileImage: "/projets/drepbyahavyaphone.png",
     link: "https://drepbyahava.com/",
   },
   {
+    id: "aeli",
     year: "2026",
     title: "AELI Services",
-    description: "Plateforme e-commerce de mise en relation et de services dédiée à l'entrepreneuriat féminin.",
     technologies: ["React", "Node.js", "PostgreSQL", "Redis", "NotchPay", "OVH VPS"],
     image: "/projets/aeliservice.png",
     mobileImage: "/projets/aeliservicephone.png",
@@ -109,26 +79,30 @@ const projects = [
 ];
 
 export function ExperiencePage() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-full bg-slate-50 px-4 py-8 text-slate-900 sm:px-6 md:px-10 md:py-12">
       <main className="mx-auto max-w-5xl">
         <header className="mb-10">
-          <span className="inline-flex items-center gap-2 rounded-full bg-slate-200 px-3 py-1 text-xs font-medium text-slate-800">
-            <span className="h-1.5 w-1.5 rounded-full bg-slate-700" />
-            Parcours professionnel
-          </span>
+          <div className="flex items-center justify-between gap-4">
+            <span className="inline-flex items-center gap-2 rounded-full bg-slate-200 px-3 py-1 text-xs font-medium text-slate-800">
+              <span className="h-1.5 w-1.5 rounded-full bg-slate-700" />
+              {t("experience.category")}
+            </span>
+            <Toggle />
+          </div>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-            Expériences professionnelles
+            {t("experience.pageTitle")}
           </h1>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-500">
-            Des projets en développement full-stack, intelligence artificielle,
-            automatisation et ingénierie des données.
+            {t("experience.intro")}
           </p>
         </header>
 
         <section aria-labelledby="experiences-heading">
           <h2 id="experiences-heading" className="sr-only">
-            Expériences professionnelles
+            {t("experience.entriesLabel")}
           </h2>
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
             {experiences.map((experience) => (
@@ -140,7 +114,7 @@ export function ExperiencePage() {
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-slate-100 bg-white p-2">
                     <img
                       src={experience.logo}
-                      alt={`Logo ${experience.company}`}
+                      alt={t("experience.logo", { company: experience.company })}
                       className="h-full w-full object-contain"
                     />
                   </div>
@@ -148,7 +122,7 @@ export function ExperiencePage() {
                     <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
                       <div>
                         <h3 className="text-lg font-semibold leading-snug text-slate-900">
-                          {experience.role}
+                          {t(`experience.entries.${experience.id}.role`)}
                         </h3>
                         <p className="mt-1 text-sm font-medium text-slate-700">
                           {experience.company}
@@ -156,27 +130,37 @@ export function ExperiencePage() {
                       </div>
                       <span className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
                         <CalendarDays className="h-3.5 w-3.5" />
-                        {experience.period}
+                        {t(`experience.entries.${experience.id}.period`)}
                       </span>
                     </div>
 
                     <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-slate-600">
-                      {experience.highlights.map((highlight, index) => (
+                      {experience.highlights.map((index) => (
                         <Fragment key={index}>
                           <li className="flex gap-2.5">
                             <span
                               aria-hidden="true"
                               className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-slate-600"
                             />
-                            <span>{highlight}</span>
+                            <span>
+                              <Trans
+                                i18nKey={`experience.entries.${experience.id}.highlights.${index}`}
+                                components={{
+                                  strong: <strong />,
+                                  em: <em />,
+                                }}
+                              />
+                            </span>
                           </li>
                           {experience.architectureSections
                             ?.filter((section) => section.afterHighlight === index)
                             .map((section) => (
-                              <li key={section.title} className="list-none">
+                              <li key={section.titleKey} className="list-none">
                                 <ArchitecturePlaceholder
                                   company={experience.company}
-                                  title={section.title}
+                                  title={t(
+                                    `experience.entries.${experience.id}.${section.titleKey}`,
+                                  )}
                                   image={section.image}
                                 />
                               </li>
@@ -198,13 +182,13 @@ export function ExperiencePage() {
             </div>
             <div>
               <p className="text-xs font-medium uppercase tracking-wide text-slate-700">
-                Sélection
+                {t("experience.selection")}
               </p>
               <h2
                 id="projects-heading"
                 className="text-xl font-semibold tracking-tight text-slate-900"
               >
-                Projets clés à forte valeur
+                {t("experience.projectsTitle")}
               </h2>
             </div>
           </div>
@@ -223,7 +207,7 @@ export function ExperiencePage() {
                     {project.title}
                   </h3>
                   <p className="mt-1.5 truncate text-sm leading-relaxed text-slate-600">
-                    {project.description}
+                    {t(`experience.projects.${project.id}.description`)}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.technologies.map((technology) => (
@@ -241,7 +225,7 @@ export function ExperiencePage() {
                     rel="noopener noreferrer"
                     className="mt-5 inline-flex items-center gap-2 rounded-lg bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
                   >
-                    Voir le projet
+                    {t("experience.viewProject")}
                     <ExternalLink aria-hidden="true" className="h-4 w-4" />
                   </a>
                 </div>
@@ -255,7 +239,7 @@ export function ExperiencePage() {
                     )}
                     <img
                       src={project.image}
-                      alt={`Aperçu du projet ${project.title}`}
+                      alt={t("experience.projectPreview", { title: project.title })}
                       loading="lazy"
                       className="h-full w-full object-cover"
                     />
@@ -263,11 +247,15 @@ export function ExperiencePage() {
                 ) : (
                   <div
                     role="img"
-                    aria-label={`Emplacement réservé à une photo de ${project.title}`}
+                    aria-label={t("experience.projectPhotoPlaceholder", {
+                      title: project.title,
+                    })}
                     className="order-first flex h-40 w-full shrink-0 flex-col items-center justify-center gap-1.5 border-b border-slate-200 bg-slate-100 px-2 text-slate-400 sm:order-last sm:h-auto sm:w-36 sm:border-b-0 sm:border-l"
                   >
                     <Image aria-hidden="true" className="h-5 w-5" />
-                    <span className="text-[10px]">Photo du projet</span>
+                    <span className="text-[10px]">
+                      {t("experience.projectPhoto")}
+                    </span>
                   </div>
                 )}
               </article>
@@ -280,6 +268,8 @@ export function ExperiencePage() {
 }
 
 function ArchitecturePlaceholder({ company, title, image }) {
+  const { t } = useTranslation();
+
   return (
     <div className="my-4 rounded-xl ">
       <div className="flex items-center gap-2 text-sm font-medium text-slate-700">
@@ -289,16 +279,16 @@ function ArchitecturePlaceholder({ company, title, image }) {
       {image ? (
         <img
           src={image}
-          alt={`${title} — ${company}`}
+          alt={t("experience.architectureImage", { title, company })}
           loading="lazy"
           className="mt-3 h-auto w-full rounded-lg bg-white object-contain"
         />
       ) : (
         <div
-          aria-label={`Emplacement réservé au schéma d’architecture ${title} ${company}`}
+          aria-label={t("experience.architectureDiagram", { title, company })}
           className="mt-3 flex min-h-28 items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white/80 px-4 py-6 text-center text-xs text-slate-400"
         >
-          Espace réservé — ajoutez ici le schéma d’architecture
+          {t("experience.architecturePlaceholder")}
         </div>
       )}
     </div>

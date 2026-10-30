@@ -11,24 +11,28 @@ export const skillsData = {
   columns: [
     [
       {
+        id: "frontend",
         title: "Frontend development",
         description: "Building responsive, accessible interfaces for the web.",
         category: "frontend",
         badges: ["React", "TypeScript", "Code"],
       },
       {
+        id: "backend",
         title: "Backend development",
         description: "Designing APIs and server-side application logic.",
         category: "backend",
         badges: ["Node.js", "FastAPI"],
       },
       {
+        id: "databases",
         title: "Databases",
         description: "Structuring and querying application data.",
         category: "backend",
         badges: ["PostgreSQL", "MongoDB", "MySQL"],
       },
       {
+        id: "devTools",
         title: "Development tools",
         description: "Tools for collaboration, automation, and deployment.",
         category: "tools",
@@ -37,24 +41,28 @@ export const skillsData = {
     ],
     [
       {
+        id: "dataAi",
         title: "Data science and AI",
         description: "Libraries for data analysis, computer vision, and machine learning.",
         category: "backend",
         badges: ["Python", "NumPy", "Pandas", "OpenCV", "PyTorch", "Scikit-learn"],
       },
       {
+        id: "analyticsCloud",
         title: "Analytics and cloud",
         description: "Platforms for analytics, visualization, and cloud services.",
         category: "tools",
         badges: ["Power BI", "Tableau", "Google"],
       },
       {
+        id: "uiux",
         title: "UI / UX design",
         description: "Designing clear, consistent, user-centered interfaces.",
         category: "design",
         badges: ["Figma"],
       },
       {
+        id: "education",
         title: "Education",
         description: "Schools and training organizations.",
         section: "projects",
@@ -64,6 +72,7 @@ export const skillsData = {
     ],
     [
       {
+        id: "organizations",
         title: "Organizations and projects",
         description: "Organizations and project identities represented in my work.",
         section: "projects",
@@ -77,6 +86,7 @@ export const skillsData = {
         ],
       },
       {
+        id: "travelMedia",
         title: "Travel and media",
         description: "Travel and music-related project assets.",
         section: "travel",
