@@ -30,8 +30,19 @@ export function TravelPage() {
   const selectedPhoto = travelPhotos[selectedPhotoIndex];
   const destination = travelDestinations[selectedPhoto.destinationIndex];
   const travelMarkers = useMemo(
-    () => [{ location: destination.location, size: 0.12 }],
-    [destination],
+    () =>
+      travelDestinations.map((item, index) => {
+        const isSelected = index === selectedPhoto.destinationIndex;
+
+        return {
+          location: item.location,
+          size: isSelected ? 0.12 : 0.08,
+          color: isSelected
+            ? [15 / 255, 23 / 255, 42 / 255]
+            : [148 / 255, 163 / 255, 184 / 255],
+        };
+      }),
+    [selectedPhoto.destinationIndex],
   );
 
   const selectPhoto = (direction) => {

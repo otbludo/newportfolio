@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import createGlobe from "cobe";
 import { useMotionValue, useSpring } from "motion/react";
 
-const MOVEMENT_DAMPING = 200;
+const MOVEMENT_DAMPING = 100;
 
 const GLOBE_CONFIG = {
   devicePixelRatio: 2,
