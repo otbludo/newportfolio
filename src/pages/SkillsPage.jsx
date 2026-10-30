@@ -51,6 +51,21 @@ export function SkillsPage({ activeFilter, onFilterChange }) {
             ))}
           </div>
         ))}
+        <h2 className="col-span-full mt-6 text-xl font-semibold tracking-tight text-slate-900">
+          Graphique de contributions GitHub
+        </h2>
+        <div
+          role="region"
+          aria-label="Graphique de contributions GitHub, défilement horizontal"
+          tabIndex={0}
+          className="col-span-full w-full overflow-x-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500"
+        >
+          <img
+            src="https://ghchart.rshah.org/otbludo"
+            alt="Mon graphique de contributions GitHub"
+            className="block w-[700px] max-w-none sm:w-full sm:max-w-full"
+          />
+        </div>
       </section>
     </main>
   );
