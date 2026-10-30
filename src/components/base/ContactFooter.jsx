@@ -2,11 +2,11 @@ export function ContactFooter() {
   return (
     <footer className="mx-auto flex w-full max-w-5xl items-end justify-between gap-6 px-4 pb-8 pt-10 md:px-6">
       <div>
-        <p className="text-[10px] text-slate-500">That's all for now.</p>
+        <p className="text-[10px] text-slate-500">Pour découvrir la suite</p>
         <h2 className="mt-2 text-[22px] font-medium leading-[1.25] tracking-[-0.01em] md:text-[24px]">
-          Got a project in mind?
+          Découvre mes projets
           <br />
-          Let's talk
+          sur GitHub
         </h2>
       </div>
       <a
