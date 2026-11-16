@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 400" font-family="Inter, Arial, Helvetica, sans-serif">
+  <title>Architecture du pipeline OCR (CNN-BiLSTM-CTC)</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="2000" height="400" fill="#ffffff"/>
+
+  <!-- ===== Groupes ===== -->
+  <g font-size="20" font-weight="700" text-anchor="middle">
+    <rect x="10" y="117" width="445" height="148" rx="10" fill="#f0f9ff" stroke="#7dd3fc"/>
+    <text x="232" y="145" fill="#075985">Prétraitement</text>
+
+    <rect x="511" y="107" width="223" height="170" rx="10" fill="#fff8f1" stroke="#fdba74"/>
+    <text x="622" y="135" fill="#9a3412">Extraction</text>
+
+    <rect x="790" y="8" width="222" height="382" rx="10" fill="#faf5ff" stroke="#d8b4fe"/>
+    <text x="901" y="38" fill="#6b21a8">Modélisation</text>
+
+    <rect x="1181" y="8" width="445" height="382" rx="10" fill="#f5f3ff" stroke="#c4b5fd"/>
+    <text x="1403" y="38" fill="#5b21b6">Décodage</text>
+
+    <rect x="1768" y="68" width="222" height="322" rx="10" fill="#f0fdf4" stroke="#86efac"/>
+    <text x="1879" y="96" fill="#166534">Résultat</text>
+  </g>
+
+  <!-- ===== Flèches ===== -->
+  <g stroke="#334155" stroke-width="2.5" fill="none" marker-end="url(#arrow)">
+    <path d="M205 192H257"/>
+    <path d="M428 192C470 192 490 190 535 190"/>
+    <path d="M706 192C750 192 770 190 814 190"/>
+    <path d="M930 155C990 80 1000 62 1080 62H1380C1440 62 1465 78 1465 99"/>
+    <path d="M985 208C1030 212 1100 212 1291 212C1420 212 1460 190 1478 155"/>
+    <path d="M1376 127H1428"/>
+    <path d="M955 229C1000 262 1020 266 1100 266H1180C1220 266 1236 278 1236 292"/>
+    <path d="M928 229C980 300 1010 336 1096 338H1205"/>
+    <path d="M1599 127C1700 127 1790 130 1826 158"/>
+    <path d="M1376 320H1792"/>
+  </g>
+
+  <!-- ===== Blocs ===== -->
+  <g font-size="20" text-anchor="middle">
+    <rect x="37" y="167" width="168" height="50" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+    <text x="121" y="199" font-weight="700" fill="#0c4a6e">Image</text>
+    <rect x="260" y="167" width="168" height="50" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+    <text x="344" y="199" font-weight="700" fill="#0c4a6e">LMDB</text>
+
+    <rect x="538" y="153" width="168" height="78" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+    <text x="622" y="186" font-weight="700" fill="#9a3412">CNN</text>
+    <text x="622" y="212" font-size="16" fill="#9a3412">5 couches</text>
+
+    <rect x="817" y="153" width="168" height="78" rx="8" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="901" y="186" font-weight="700" fill="#581c87">BiLSTM</text>
+    <text x="901" y="212" font-size="16" fill="#581c87">2 couches</text>
+
+    <rect x="1208" y="102" width="168" height="50" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+    <text x="1292" y="134" font-weight="700" fill="#1e293b">Référentiel</text>
+    <rect x="1431" y="102" width="168" height="50" rx="8" fill="#e0e7ff" stroke="#4338ca" stroke-width="2"/>
+    <text x="1515" y="134" font-weight="700" fill="#312e81">CTC loss</text>
+    <rect x="1208" y="295" width="168" height="50" rx="8" fill="#e0e7ff" stroke="#4338ca" stroke-width="2"/>
+    <text x="1292" y="327" font-weight="700" fill="#312e81">CTC decode</text>
+
+    <rect x="1795" y="161" width="168" height="50" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+    <text x="1879" y="193" font-weight="700" fill="#14532d">0.123…</text>
+    <rect x="1795" y="295" width="168" height="50" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+    <text x="1879" y="327" font-weight="700" fill="#14532d">« house »</text>
+  </g>
+
+  <!-- ===== Étiquettes ===== -->
+  <g font-size="15" text-anchor="middle" fill="#1e293b">
+    <rect x="1221" y="189" width="140" height="46" rx="12" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="1291" y="208">chars = 80</text>
+    <text x="1291" y="227">time-steps = 32</text>
+
+    <rect x="1026" y="315" width="140" height="46" rx="12" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="1096" y="334">chars = 80</text>
+    <text x="1096" y="353">time-steps = 32</text>
+
+    <rect x="1640" y="104" width="114" height="46" rx="12" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="1697" y="123">longueur ≤ 32</text>
+    <text x="1697" y="142">« house »</text>
+
+    <rect x="1457" y="297" width="114" height="46" rx="12" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="1514" y="316">longueur ≤ 32</text>
+    <text x="1514" y="335">« house »</text>
+  </g>
+</svg>

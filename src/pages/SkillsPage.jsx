@@ -6,14 +6,7 @@ import { Toggle } from "../components/ui/toggle.jsx";
 
 export function SkillsPage({ activeFilter, onFilterChange }) {
   const { t } = useTranslation();
-  const skills = skillsData.columns
-    .flat()
-    .filter((skill) => (skill.section ?? "stacks") === "stacks");
-  const galleryColumns = [
-    skills.slice(0, 3),
-    skills.slice(3, 5),
-    skills.slice(5),
-  ];
+  const galleryColumns = skillsData.columns;
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8 pb-28 md:px-6 md:py-10 md:pb-28">
@@ -28,6 +21,9 @@ export function SkillsPage({ activeFilter, onFilterChange }) {
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
           {t("skills.pageTitle")}
         </h1>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-500">
+          {t("skills.intro")}
+        </p>
       </header>
 
       <SkillsFilter
@@ -38,7 +34,7 @@ export function SkillsPage({ activeFilter, onFilterChange }) {
 
       <section
         aria-label={t("skills.category")}
-        className="mt-[30px] grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.9fr)_minmax(0,1.15fr)]"
+        className="mt-[30px] grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
       >
         {galleryColumns.map((column, columnIndex) => (
           <div
@@ -47,7 +43,7 @@ export function SkillsPage({ activeFilter, onFilterChange }) {
           >
             {column.map((skill) => (
               <SkillCard
-                key={skill.title}
+                key={skill.id}
                 skill={skill}
                 logoMap={skillsData.logoMap}
                 dimmed={

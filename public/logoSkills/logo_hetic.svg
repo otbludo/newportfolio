@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-53 -7 700 700">
+  <title>HETIC</title>
+  <rect x="-53" y="-7" width="700" height="700" fill="#00382B"/>
+  <g fill="#ffffff" fill-rule="evenodd">
+    <path d="M128 32a68 68 0 1 0 0.01 0zM128 69a31 31 0 1 1-0.01 0z"/>
+    <path d="M470 197a68 68 0 1 0 0.01 0zM470 234a31 31 0 1 1-0.01 0z"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="40" stroke-linecap="round">
+    <path d="M443 62v78M508 62v78"/>
+    <path d="M85 227h85M85 300h85M255 227v78M330 227v78"/>
+    <path d="M88 390v80M165 390v80M432 390h78M432 465h78"/>
+  </g>
+  <text x="300" y="640" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="96" font-weight="700" text-anchor="middle" letter-spacing="36">HETIC</text>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 640" font-family="Inter, Arial, Helvetica, sans-serif">
+  <title>Pipeline KYC : document d'identité analysé par OCR puis validé</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#132a3a"/>
+    </linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0.45"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <rect width="288" height="640" fill="url(#bg)"/>
+  <rect width="288" height="640" fill="url(#grid)"/>
+
+  <!-- 1. Document d'identité -->
+  <text x="24" y="58" fill="#94a3b8" font-size="12" font-weight="600" letter-spacing="2">01 · DOCUMENT</text>
+  <g transform="translate(24 74)">
+    <rect width="240" height="150" rx="12" fill="#f8fafc"/>
+    <rect width="240" height="30" rx="12" fill="#1e3a5f"/>
+    <rect y="18" width="240" height="12" fill="#1e3a5f"/>
+    <text x="14" y="20" fill="#ffffff" font-size="11" font-weight="700" letter-spacing="1.5">CARTE D'IDENTITÉ</text>
+    <!-- photo -->
+    <rect x="14" y="44" width="62" height="78" rx="6" fill="#cbd5e1"/>
+    <circle cx="45" cy="72" r="13" fill="#94a3b8"/>
+    <path d="M23 118c3-16 12-23 22-23s19 7 22 23z" fill="#94a3b8"/>
+    <!-- champs -->
+    <rect x="90" y="48" width="70" height="8" rx="4" fill="#94a3b8"/>
+    <rect x="90" y="64" width="120" height="8" rx="4" fill="#475569"/>
+    <rect x="90" y="84" width="54" height="8" rx="4" fill="#94a3b8"/>
+    <rect x="90" y="100" width="96" height="8" rx="4" fill="#475569"/>
+    <rect x="14" y="132" width="212" height="7" rx="3.5" fill="#cbd5e1"/>
+    <!-- boîtes OCR -->
+    <g fill="none" stroke="#10b981" stroke-width="2">
+      <rect x="10" y="40" width="70" height="86" rx="4"/>
+      <rect x="86" y="60" width="128" height="16" rx="3"/>
+      <rect x="86" y="96" width="104" height="16" rx="3"/>
+      <rect x="10" y="128" width="220" height="15" rx="3"/>
+    </g>
+    <!-- ligne de scan -->
+    <rect x="0" y="70" width="240" height="40" fill="url(#scan)"/>
+    <rect x="0" y="109" width="240" height="2" fill="#34d399"/>
+  </g>
+
+  <!-- flèche -->
+  <path d="M144 244v34" stroke="#34d399" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M137 272l7 9 7-9" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 2. Extraction -->
+  <text x="24" y="312" fill="#94a3b8" font-size="12" font-weight="600" letter-spacing="2">02 · EXTRACTION OCR</text>
+  <g transform="translate(24 326)">
+    <rect width="240" height="150" rx="12" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+    <g font-size="12">
+      <text x="16" y="32" fill="#94a3b8">nom</text>
+      <rect x="92" y="22" width="96" height="12" rx="6" fill="#e2e8f0"/>
+      <text x="16" y="64" fill="#94a3b8">naissance</text>
+      <rect x="92" y="54" width="70" height="12" rx="6" fill="#e2e8f0"/>
+      <text x="16" y="96" fill="#94a3b8">numéro</text>
+      <rect x="92" y="86" width="108" height="12" rx="6" fill="#e2e8f0"/>
+      <text x="16" y="128" fill="#94a3b8">expiration</text>
+      <rect x="92" y="118" width="70" height="12" rx="6" fill="#e2e8f0"/>
+    </g>
+    <g fill="#10b981">
+      <circle cx="218" cy="28" r="7"/><circle cx="218" cy="60" r="7"/>
+      <circle cx="218" cy="92" r="7"/><circle cx="218" cy="124" r="7"/>
+    </g>
+    <g fill="none" stroke="#0b1220" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M214.5 28l2.5 2.5 4.5-5"/><path d="M214.5 60l2.5 2.5 4.5-5"/>
+      <path d="M214.5 92l2.5 2.5 4.5-5"/><path d="M214.5 124l2.5 2.5 4.5-5"/>
+    </g>
+  </g>
+
+  <!-- flèche -->
+  <path d="M144 494v34" stroke="#34d399" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M137 522l7 9 7-9" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 3. Validation -->
+  <g transform="translate(44 546)">
+    <rect width="200" height="52" rx="26" fill="#10b981"/>
+    <circle cx="28" cy="26" r="14" fill="#ffffff"/>
+    <path d="M21 26l5 5 9-10" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="54" y="32" fill="#ffffff" font-size="17" font-weight="700" letter-spacing="1">KYC VALIDÉ</text>
+  </g>
+</svg>

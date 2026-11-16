@@ -8,14 +8,16 @@
   "home": {
     "greeting": "Salut, je suis Ludovic OTABELA,",
     "greetingSuffix": "mais vous pouvez m’appeler OT.",
-    "profession": "DATA ENGINEER & DÉVELOPPEUR FULL-STACK IA",
-    "description": "Je conçois et développe des applications multiplateforme modernes et des solutions intelligentes en IA et Big Data.",
+    "profession": "DATA & INTELLIGENCE ARTIFICIELLE — ALTERNANCE",
+    "description": "Je valorise les données des entreprises, de l’analyse exploratoire au déploiement de modèles prédictifs et d’agents IA (RAG, OCR, LLM).",
     "socialLinks": "Réseaux sociaux",
     "github": "GitHub — otbludo (ouvre un nouvel onglet)",
     "linkedin": "LinkedIn — Ludovic Otabela (ouvre un nouvel onglet)",
     "portrait": "Portrait d’Otabela",
     "projects": "Voir mes projets",
-    "marquee": "DATA ENGINEER & DÉVELOPPEUR FULL-STACK IA —"
+    "marquee": "DATA & INTELLIGENCE ARTIFICIELLE —",
+    "availability": "En recherche d’alternance · Mastère Data & IA, HETIC",
+    "rhythm": "Rouen / Paris · 2 semaines en entreprise, 1 semaine en formation"
   },
   "navigation": {
     "main": "Navigation principale",
@@ -34,65 +36,92 @@
   },
   "skills": {
     "category": "Compétences",
-    "pageTitle": "Les compétences qui me passionnent",
+    "pageTitle": "Mes compétences Data & IA",
     "filtersLabel": "Filtres de compétences",
     "chartTitle": "Graphique de contributions GitHub",
     "chartRegion": "Graphique de contributions GitHub, défilement horizontal",
     "chartAlt": "Mon graphique de contributions GitHub",
     "filters": {
       "all": "Toutes les compétences",
-      "frontend": "Développement frontend",
-      "backend": "Développement backend",
-      "tools": "Outils et projets",
-      "design": "Design"
+      "data": "Data & machine learning",
+      "engineering": "Data engineering & IA",
+      "dev": "Développement & déploiement",
+      "tools": "Gestion de projet & langues"
     },
     "cards": {
-      "frontend": {
-        "title": "Développement frontend",
-        "description": "Création d’interfaces web accessibles et adaptatives."
+      "dataAi": {
+        "title": "Data science & machine learning",
+        "description": "Préparation des données, modélisation et évaluation.",
+        "points": [
+          "Modélisation prédictive et classification",
+          "Compétitions Kaggle depuis plus d’un an (Titanic)"
+        ]
+      },
+      "analytics": {
+        "title": "Analyse & data visualisation",
+        "description": "Transformer les données en indicateurs utiles à la décision.",
+        "points": [
+          "Analyse exploratoire",
+          "Tableaux de bord Power BI de suivi des KPI"
+        ]
+      },
+      "vision": {
+        "title": "Vision par ordinateur",
+        "description": "Extraction automatique d’informations à partir d’images et de documents.",
+        "points": [
+          "OCR sur registres d’état civil (CNN-BiLSTM-CTC)",
+          "Lecture et validation de documents d’identité (EasyOCR, KYC)"
+        ]
+      },
+      "genAi": {
+        "title": "IA générative & LLM",
+        "description": "Agents IA connectés aux documents et aux données de l’entreprise.",
+        "points": [
+          "Agents RAG avec indexation vectorielle (ChromaDB)",
+          "Extraction structurée par LLM (GPT-4o) depuis e-mails, PDF et formulaires"
+        ]
+      },
+      "dataEng": {
+        "title": "Data engineering",
+        "description": "Collecter, nettoyer et centraliser les données de façon fiable.",
+        "points": [
+          "Pipelines ETL / ELT avec validation et nettoyage",
+          "Automatisation de flux (n8n, API) et scraping (BeautifulSoup)"
+        ]
       },
       "backend": {
-        "title": "Développement backend",
-        "description": "Conception d’API et de logique applicative côté serveur."
+        "title": "API & déploiement de modèles",
+        "description": "Mettre les modèles et les données à disposition des applications.",
+        "points": [
+          "API REST (FastAPI, Node.js)",
+          "Conteneurisation et déploiement sur serveur Linux"
+        ]
       },
-      "databases": {
-        "title": "Bases de données",
-        "description": "Structuration et interrogation des données applicatives."
+      "frontend": {
+        "title": "Web & mobile",
+        "description": "Interfaces web (React) et mobiles (React Native) pour exposer les données et les modèles.",
+        "points": []
       },
-      "devTools": {
-        "title": "Outils de développement",
-        "description": "Outils de collaboration, d’automatisation et de déploiement."
+      "project": {
+        "title": "Gestion de projet",
+        "description": "Travail en équipe en méthode Agile / Scrum, avec suivi des tâches et versionnage du code.",
+        "points": []
       },
-      "dataAi": {
-        "title": "Data science et IA",
-        "description": "Bibliothèques d’analyse de données, de vision par ordinateur et d’apprentissage automatique."
-      },
-      "analyticsCloud": {
-        "title": "Analytique et cloud",
-        "description": "Plateformes d’analyse, de visualisation et services cloud."
-      },
-      "uiux": {
-        "title": "Design UI / UX",
-        "description": "Conception d’interfaces claires, cohérentes et centrées sur l’utilisateur."
-      },
-      "education": {
-        "title": "Formation",
-        "description": "Écoles et organismes de formation."
-      },
-      "organizations": {
-        "title": "Organisations et projets",
-        "description": "Organisations et identités de projets représentées dans mes réalisations."
-      },
-      "travelMedia": {
-        "title": "Voyages et médias",
-        "description": "Ressources liées aux voyages et à la musique."
+      "languages": {
+        "title": "Langues",
+        "description": "Communication avec des équipes francophones et internationales.",
+        "points": [
+          "Français — langue maternelle",
+          "Anglais — professionnel"
+        ]
       }
-    }
+    },
+    "intro": "De la donnée brute au modèle en production : analyse, machine learning, pipelines de données et IA générative."
   },
   "experience": {
     "category": "Parcours professionnel",
     "pageTitle": "Expériences professionnelles",
-    "intro": "Des projets en développement full-stack, intelligence artificielle, automatisation et ingénierie des données.",
+    "intro": "Data engineering, intelligence artificielle et automatisation : des projets menés en entreprise, de la donnée brute au modèle déployé.",
     "entriesLabel": "Expériences professionnelles",
     "selection": "Sélection",
     "projectsTitle": "Projets clés à forte valeur",
@@ -107,45 +136,82 @@
     "entries": {
       "onutech": {
         "period": "Oct. 2025 — Juil. 2026",
-        "role": "Lead développeur Full-Stack & IA",
+        "role": "Développeur Data & IA",
         "highlights": [
-          "<strong>IA & recherche :</strong> création de l’agent <strong>ONUtech RAG</strong> (FastAPI, ChromaDB), réduisant de <strong>60 %</strong> le temps d’accès aux documents.",
-          "<strong>Automatisation :</strong> ingestion et traitement automatisés de flux avec l’API WhatsApp Business et des workflows n8n.",
-          "<strong>Architecture :</strong> direction technique et supervision de pipelines de données."
+          "<strong>Agent RAG :</strong> conception de l’agent <strong>ONUtech RAG</strong> (FastAPI, LangChain, ChromaDB, embeddings Gemini, Llama 3.3 via Groq), réduisant de <strong>60 %</strong> le temps d’accès aux documents.",
+          "<strong>Ingestion de documents :</strong> chargement automatisé des PDF en Python, découpage en morceaux et indexation vectorielle des contenus dans ChromaDB.",
+          "<strong>Reporting :</strong> analyse exploratoire de l’activité et <strong>tableaux de bord Power BI</strong> pour le suivi des indicateurs clés.",
+          "<strong>Automatisation :</strong> flux de données via l’API WhatsApp Business et des workflows n8n, avec supervision des pipelines."
         ],
         "architecture": {
           "pipeline": "Architecture du pipeline"
-        }
+        },
+        "contract": "CDD"
       },
       "colorix": {
         "period": "Nov. 2025 — Jan. 2026",
         "role": "Stagiaire IA & automatisation",
         "highlights": [
-          "<strong>Devis intelligent :</strong> conception d’un agent IA sur mesure, réduisant de <strong>80 %</strong> le délai de traitement manuel."
+          "<strong>Agent de devis :</strong> conception d’un agent IA réduisant de <strong>80 %</strong> le délai de traitement manuel des demandes.",
+          "<strong>Extraction de données :</strong> récupération automatique des informations (OCR, GPT-4o) depuis des e-mails, des PDF et des formulaires.",
+          "<strong>Moteur tarifaire :</strong> calcul des prix sur PostgreSQL, exposé via une API FastAPI avec cache Redis, et génération des devis en PDF."
         ],
         "architecture": {
           "pipeline": "Architecture du pipeline"
-        }
+        },
+        "contract": "Stage"
       },
       "bunec": {
         "period": "Mai 2025 — Sep. 2025",
-        "role": "Stagiaire Big Data & OCR",
+        "role": "Stagiaire Data Engineer & OCR",
         "highlights": [
-          "<strong>Pipeline OCR :</strong> développement d’un modèle CNN-BiLSTM-CTC pour la transcription automatique de registres.",
-          "<strong>Pipeline ETL :</strong> double stockage (staging brut et production normalisée), gestion dynamique des schémas CSV, génération d’un identifiant unique composite (<em>uniqueid</em>) et synchronisation sécurisée avec PostgreSQL."
+          "<strong>Modèle OCR :</strong> développement d’un modèle de deep learning <strong>CNN-BiLSTM-CTC</strong> transcrivant automatiquement les registres d’état civil.",
+          "<strong>Pipeline ETL :</strong> centralisation des données de plusieurs centres d’état civil, avec validation, nettoyage et gestion dynamique des schémas CSV.",
+          "<strong>Chargement en production :</strong> double stockage (staging brut et production normalisée), identifiant unique composite par acte (<em>uniqueid</em>) et synchronisation sécurisée avec PostgreSQL."
         ],
         "architecture": {
           "ocr": "Architecture du pipeline OCR",
           "etl": "Architecture du pipeline ETL"
-        }
+        },
+        "contract": "Stage"
       }
     },
     "projects": {
+      "kyc": {
+        "description": "Validation automatique de pièces d’identité."
+      },
       "drep": {
-        "description": "Application de santé mobile multiplateforme."
+        "description": "Fiabilisation de données médicales."
       },
       "aeli": {
-        "description": "Plateforme e-commerce de mise en relation et de services dédiée à l’entrepreneuriat féminin."
+        "description": "Plateforme de services pour entrepreneures."
+      }
+    },
+    "tagsLabel": "Domaines",
+    "educationTitle": "Formation",
+    "tags": {
+      "IA générative": "IA générative",
+      "Data Engineering": "Data Engineering",
+      "Reporting": "Reporting",
+      "IA": "IA",
+      "Extraction de données": "Extraction de données",
+      "API": "API",
+      "Deep Learning": "Deep Learning",
+      "ETL": "ETL",
+      "SQL": "SQL"
+    },
+    "education": {
+      "hetic": {
+        "school": "HETIC",
+        "degree": "Mastère Data & IA",
+        "period": "2026 — 2027 · Alternance",
+        "details": "Membre de l’association HETIC’Inter (intégration des nouveaux étudiants)."
+      },
+      "keyce": {
+        "school": "Keyce Informatique & IA",
+        "degree": "Bachelor IA & Big Data",
+        "period": "2024 — 2025",
+        "details": "Pipelines de données, machine learning et Big Data."
       }
     }
   },
@@ -171,5 +237,8 @@
   },
   "globe": {
     "label": "Globe interactif avec des destinations de voyage"
+  },
+  "common": {
+    "downloadCv": "Télécharger mon CV"
   }
 }

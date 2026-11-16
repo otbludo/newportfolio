@@ -8,14 +8,16 @@
   "home": {
     "greeting": "Hi, I'm Ludovic OTABELA,",
     "greetingSuffix": "but you can call me OT.",
-    "profession": "DATA ENGINEER & FULL-STACK AI DEVELOPER",
-    "description": "I design and build modern cross-platform applications and intelligent AI and Big Data solutions.",
+    "profession": "DATA & ARTIFICIAL INTELLIGENCE — WORK-STUDY",
+    "description": "I help companies get value from their data, from exploratory analysis to deploying predictive models and AI agents (RAG, OCR, LLM).",
     "socialLinks": "Social media",
     "github": "GitHub — otbludo (opens in a new tab)",
     "linkedin": "LinkedIn — Ludovic Otabela (opens in a new tab)",
     "portrait": "Portrait of Otabela",
     "projects": "View my projects",
-    "marquee": "DATA ENGINEER & FULL-STACK AI DEVELOPER —"
+    "marquee": "DATA & ARTIFICIAL INTELLIGENCE —",
+    "availability": "Looking for a work-study contract · MSc Data & AI, HETIC",
+    "rhythm": "Rouen / Paris · 2 weeks at the company, 1 week at school"
   },
   "navigation": {
     "main": "Main navigation",
@@ -34,65 +36,92 @@
   },
   "skills": {
     "category": "Skills",
-    "pageTitle": "Skills that fuel my passion",
+    "pageTitle": "My Data & AI skills",
     "filtersLabel": "Skill filters",
     "chartTitle": "GitHub contribution graph",
     "chartRegion": "GitHub contribution graph, horizontal scrolling",
     "chartAlt": "My GitHub contribution graph",
     "filters": {
       "all": "All skills",
-      "frontend": "Frontend development",
-      "backend": "Backend development",
-      "tools": "Tools and projects",
-      "design": "Design"
+      "data": "Data & machine learning",
+      "engineering": "Data engineering & AI",
+      "dev": "Development & deployment",
+      "tools": "Project management & languages"
     },
     "cards": {
-      "frontend": {
-        "title": "Frontend development",
-        "description": "Building responsive, accessible interfaces for the web."
+      "dataAi": {
+        "title": "Data science & machine learning",
+        "description": "Data preparation, modeling and evaluation.",
+        "points": [
+          "Predictive modeling and classification",
+          "Kaggle competitions for over a year (Titanic)"
+        ]
+      },
+      "analytics": {
+        "title": "Analytics & data visualization",
+        "description": "Turning data into indicators that support decisions.",
+        "points": [
+          "Exploratory data analysis",
+          "Power BI dashboards for KPI tracking"
+        ]
+      },
+      "vision": {
+        "title": "Computer vision",
+        "description": "Automatic information extraction from images and documents.",
+        "points": [
+          "OCR on civil registry records (CNN-BiLSTM-CTC)",
+          "Identity document reading and validation (EasyOCR, KYC)"
+        ]
+      },
+      "genAi": {
+        "title": "Generative AI & LLMs",
+        "description": "AI agents connected to company documents and data.",
+        "points": [
+          "RAG agents with vector indexing (ChromaDB)",
+          "Structured LLM extraction (GPT-4o) from emails, PDFs and forms"
+        ]
+      },
+      "dataEng": {
+        "title": "Data engineering",
+        "description": "Collecting, cleaning and centralizing data reliably.",
+        "points": [
+          "ETL / ELT pipelines with validation and cleaning",
+          "Workflow automation (n8n, APIs) and web scraping (BeautifulSoup)"
+        ]
       },
       "backend": {
-        "title": "Backend development",
-        "description": "Designing APIs and server-side application logic."
+        "title": "APIs & model deployment",
+        "description": "Making models and data available to applications.",
+        "points": [
+          "REST APIs (FastAPI, Node.js)",
+          "Containerization and deployment on Linux servers"
+        ]
       },
-      "databases": {
-        "title": "Databases",
-        "description": "Structuring and querying application data."
+      "frontend": {
+        "title": "Web & mobile",
+        "description": "Web (React) and mobile (React Native) interfaces that bring data and models to users.",
+        "points": []
       },
-      "devTools": {
-        "title": "Development tools",
-        "description": "Tools for collaboration, automation, and deployment."
+      "project": {
+        "title": "Project management",
+        "description": "Teamwork with Agile / Scrum, task tracking and version control.",
+        "points": []
       },
-      "dataAi": {
-        "title": "Data science and AI",
-        "description": "Libraries for data analysis, computer vision, and machine learning."
-      },
-      "analyticsCloud": {
-        "title": "Analytics and cloud",
-        "description": "Platforms for analytics, visualization, and cloud services."
-      },
-      "uiux": {
-        "title": "UI / UX design",
-        "description": "Designing clear, consistent, user-centered interfaces."
-      },
-      "education": {
-        "title": "Education",
-        "description": "Schools and training organizations."
-      },
-      "organizations": {
-        "title": "Organizations and projects",
-        "description": "Organizations and project identities represented in my work."
-      },
-      "travelMedia": {
-        "title": "Travel and media",
-        "description": "Travel and music-related project assets."
+      "languages": {
+        "title": "Languages",
+        "description": "Working with French-speaking and international teams.",
+        "points": [
+          "French — native",
+          "English — professional"
+        ]
       }
-    }
+    },
+    "intro": "From raw data to models in production: analysis, machine learning, data pipelines and generative AI."
   },
   "experience": {
     "category": "Professional experience",
     "pageTitle": "Professional experience",
-    "intro": "Projects in full-stack development, artificial intelligence, automation, and data engineering.",
+    "intro": "Data engineering, artificial intelligence and automation: projects delivered in companies, from raw data to deployed models.",
     "entriesLabel": "Professional experience",
     "selection": "Featured",
     "projectsTitle": "Selected high-impact projects",
@@ -107,45 +136,82 @@
     "entries": {
       "onutech": {
         "period": "Oct 2025 — Jul 2026",
-        "role": "Lead Full-Stack & AI Developer",
+        "role": "Data & AI Developer",
         "highlights": [
-          "<strong>AI & Search:</strong> built the <strong>ONUtech RAG</strong> agent (FastAPI, ChromaDB), reducing document access time by <strong>60%</strong>.",
-          "<strong>Automation:</strong> automated data ingestion and processing with the WhatsApp Business API and n8n workflows.",
-          "<strong>Architecture:</strong> provided technical leadership and oversaw data pipelines."
+          "<strong>RAG agent:</strong> designed the <strong>ONUtech RAG</strong> agent (FastAPI, LangChain, ChromaDB, Gemini embeddings, Llama 3.3 via Groq), reducing document access time by <strong>60%</strong>.",
+          "<strong>Document ingestion:</strong> automated PDF loading in Python, with chunking and vector indexing of the content in ChromaDB.",
+          "<strong>Reporting:</strong> exploratory analysis of business activity and <strong>Power BI dashboards</strong> to track key indicators.",
+          "<strong>Automation:</strong> data flows built on the WhatsApp Business API and n8n workflows, with pipeline monitoring."
         ],
         "architecture": {
           "pipeline": "Pipeline architecture"
-        }
+        },
+        "contract": "Fixed-term"
       },
       "colorix": {
         "period": "Nov 2025 — Jan 2026",
         "role": "AI & Automation Intern",
         "highlights": [
-          "<strong>Smart quotes:</strong> designed a custom AI agent, reducing manual processing time by <strong>80%</strong>."
+          "<strong>Quote agent:</strong> designed an AI agent that cut manual request processing time by <strong>80%</strong>.",
+          "<strong>Data extraction:</strong> automatic extraction of information (OCR, GPT-4o) from emails, PDFs and forms.",
+          "<strong>Pricing engine:</strong> price calculation on PostgreSQL, served through a FastAPI API with Redis caching, and PDF quote generation."
         ],
         "architecture": {
           "pipeline": "Pipeline architecture"
-        }
+        },
+        "contract": "Internship"
       },
       "bunec": {
         "period": "May 2025 — Sep 2025",
-        "role": "Big Data & OCR Intern",
+        "role": "Data Engineer & OCR Intern",
         "highlights": [
-          "<strong>OCR pipeline:</strong> developed a CNN-BiLSTM-CTC model to automatically transcribe registers.",
-          "<strong>ETL pipeline:</strong> implemented dual storage (raw staging and normalized production), dynamic CSV schema handling, composite unique ID generation (<em>uniqueid</em>), and secure PostgreSQL synchronization."
+          "<strong>OCR model:</strong> developed a <strong>CNN-BiLSTM-CTC</strong> deep learning model that automatically transcribes civil registry records.",
+          "<strong>ETL pipeline:</strong> centralized data from several civil registry centers, with validation, cleaning and dynamic CSV schema handling.",
+          "<strong>Production loading:</strong> dual storage (raw staging and normalized production), a composite unique ID per record (<em>uniqueid</em>) and secure synchronization with PostgreSQL."
         ],
         "architecture": {
           "ocr": "OCR pipeline architecture",
           "etl": "ETL pipeline architecture"
-        }
+        },
+        "contract": "Internship"
       }
     },
     "projects": {
+      "kyc": {
+        "description": "Automated identity document validation."
+      },
       "drep": {
-        "description": "Cross-platform mobile health application."
+        "description": "Reliable medical data management."
       },
       "aeli": {
-        "description": "E-commerce matchmaking and services platform supporting women’s entrepreneurship."
+        "description": "Services platform for women entrepreneurs."
+      }
+    },
+    "tagsLabel": "Areas",
+    "educationTitle": "Education",
+    "tags": {
+      "IA générative": "Generative AI",
+      "Data Engineering": "Data Engineering",
+      "Reporting": "Reporting",
+      "IA": "AI",
+      "Extraction de données": "Data extraction",
+      "API": "API",
+      "Deep Learning": "Deep Learning",
+      "ETL": "ETL",
+      "SQL": "SQL"
+    },
+    "education": {
+      "hetic": {
+        "school": "HETIC",
+        "degree": "MSc Data & AI",
+        "period": "2026 — 2027 · Work-study",
+        "details": "Member of the HETIC’Inter student association (welcoming new students)."
+      },
+      "keyce": {
+        "school": "Keyce Informatique & IA",
+        "degree": "Bachelor in AI & Big Data",
+        "period": "2024 — 2025",
+        "details": "Data pipelines, machine learning and Big Data."
       }
     }
   },
@@ -171,5 +237,8 @@
   },
   "globe": {
     "label": "Interactive globe with travel destinations"
+  },
+  "common": {
+    "downloadCv": "Download my résumé"
   }
 }

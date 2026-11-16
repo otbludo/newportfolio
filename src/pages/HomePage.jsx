@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Toggle } from "../components/ui/toggle.jsx";
 
@@ -25,6 +25,23 @@ export function HomePage({ onProjectsClick }) {
           <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
             {t("home.description")}
           </p>
+          <div className="mt-3 flex flex-col items-end gap-2">
+            <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-medium text-emerald-800 ring-1 ring-emerald-200 sm:text-xs">
+              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              {t("home.availability")}
+            </span>
+            <span className="text-[11px] text-slate-500 sm:text-xs">
+              {t("home.rhythm")}
+            </span>
+            <a
+              href="/cv_ludovic_otabela.pdf"
+              download
+              className="relative z-30 inline-flex items-center gap-2 rounded-lg bg-black px-3.5 py-1.5 text-xs font-medium text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 sm:text-sm"
+            >
+              <Download aria-hidden="true" className="h-4 w-4" />
+              {t("common.downloadCv")}
+            </a>
+          </div>
           <nav
             aria-label={t("home.socialLinks")}
             className="mt-5 mb-5 sm:mb-auto flex justify-end gap-4 text-slate-500"
@@ -77,7 +94,7 @@ export function HomePage({ onProjectsClick }) {
         type="button"
         aria-label={t("home.projects")}
         onClick={onProjectsClick}
-        className="group absolute right-5 top-[38%] z-30 flex h-12 w-12 items-center justify-center rounded-full border border-slate-900/60 transition-colors duration-200 hover:bg-slate-900 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 sm:right-[18%] sm:h-16 sm:w-16 lg:right-[30%] lg:h-20 lg:w-20"
+        className="group absolute right-5 top-[47%] sm:top-[38%] z-30 flex h-12 w-12 items-center justify-center rounded-full border border-slate-900/60 transition-colors duration-200 hover:bg-slate-900 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 sm:right-[18%] sm:h-16 sm:w-16 lg:right-[30%] lg:h-20 lg:w-20"
       >
         <ArrowUpRight
           aria-hidden="true"

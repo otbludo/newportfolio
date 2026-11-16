@@ -1,8 +1,10 @@
 import { Fragment } from "react";
 import {
   CalendarDays,
+  Download,
   ExternalLink,
   FolderKanban,
+  GraduationCap,
   Image,
   Workflow,
 } from "lucide-react";
@@ -15,12 +17,13 @@ const experiences = [
     id: "onutech",
     company: "ONUtech",
     logo: "/logoSkills/logo_onutech.png",
-    highlights: [0, 1, 2],
+    tags: ["IA générative", "Data Engineering", "Reporting"],
+    highlights: [0, 1, 2, 3],
     architectureSections: [
       {
-        afterHighlight: 2,
+        afterHighlight: 1,
         titleKey: "architecture.pipeline",
-        image: "/imgexperience/rag.png",
+        image: "/imgexperience/rag.svg",
       },
     ],
   },
@@ -28,12 +31,13 @@ const experiences = [
     id: "colorix",
     company: "Colorix",
     logo: "/logoSkills/logo_colorix2.png",
-    highlights: [0],
+    tags: ["IA", "Extraction de données", "API"],
+    highlights: [0, 1, 2],
     architectureSections: [
       {
-        afterHighlight: 0,
+        afterHighlight: 2,
         titleKey: "architecture.pipeline",
-        image: "/imgexperience/devis.png",
+        image: "/imgexperience/devis.svg",
       },
     ],
   },
@@ -41,17 +45,18 @@ const experiences = [
     id: "bunec",
     company: "BUNEC",
     logo: "/logoSkills/logo_bunec.jpeg",
-    highlights: [0, 1],
+    tags: ["Deep Learning", "ETL", "SQL"],
+    highlights: [0, 1, 2],
     architectureSections: [
       {
         afterHighlight: 0,
         titleKey: "architecture.ocr",
-        image: "/imgexperience/ocr.png",
+        image: "/imgexperience/ocr.svg",
       },
       {
-        afterHighlight: 1,
+        afterHighlight: 2,
         titleKey: "architecture.etl",
-        image: "/imgexperience/etl.png",
+        image: "/imgexperience/etl.svg",
       },
     ],
   },
@@ -59,10 +64,19 @@ const experiences = [
 
 const projects = [
   {
+    id: "kyc",
+    year: "2026",
+    title: "Pipeline KYC",
+    technologies: ["Python", "PyTorch", "EasyOCR", "OpenCV"],
+    link: "https://github.com/ALLIANCE-FINANCIAL-DEV/AGENT_AI_KYC",
+    image: "/projets/kyc.svg",
+    mobileImage: "/projets/kycphone.svg",
+  },
+  {
     id: "drep",
     year: "2026",
     title: "DREP by AHAVYA",
-    technologies: ["FastAPI", "React Native", "PostgreSQL", "Redis", "NotchPay", "Stripe", "OVH VPS"],
+    technologies: ["FastAPI", "PostgreSQL", "Redis", "React Native", "Stripe", "OVH VPS"],
     image: "/projets/drepbyhavavya.png",
     mobileImage: "/projets/drepbyahavyaphone.png",
     link: "https://drepbyahava.com/",
@@ -77,6 +91,13 @@ const projects = [
     link: "https://aeliservices.com/",
   },
 ];
+
+const education = [
+  { id: "hetic", logo: "/logoSkills/logo_hetic.svg", fullBleed: true },
+  { id: "keyce", logo: "/logoSkills/logo_keyce.png" },
+];
+
+export const CV_URL = "/cv_ludovic_otabela.pdf";
 
 export function ExperiencePage() {
   const { t } = useTranslation();
@@ -98,6 +119,14 @@ export function ExperiencePage() {
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-500">
             {t("experience.intro")}
           </p>
+          <a
+            href={CV_URL}
+            download
+            className="mt-4 inline-flex items-center gap-2 rounded-lg bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+          >
+            <Download aria-hidden="true" className="h-4 w-4" />
+            {t("common.downloadCv")}
+          </a>
         </header>
 
         <section aria-labelledby="experiences-heading">
@@ -130,9 +159,23 @@ export function ExperiencePage() {
                       </div>
                       <span className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
                         <CalendarDays className="h-3.5 w-3.5" />
+                        {t(`experience.entries.${experience.id}.contract`)} ·{" "}
                         {t(`experience.entries.${experience.id}.period`)}
                       </span>
                     </div>
+                    <ul
+                      aria-label={t("experience.tagsLabel")}
+                      className="mt-3 flex flex-wrap gap-1.5"
+                    >
+                      {experience.tags.map((tag) => (
+                        <li
+                          key={tag}
+                          className="rounded-md bg-slate-900 px-2 py-0.5 text-[11px] font-medium text-white"
+                        >
+                          {t(`experience.tags.${tag}`, { defaultValue: tag })}
+                        </li>
+                      ))}
+                    </ul>
 
                     <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-slate-600">
                       {experience.highlights.map((index) => (
@@ -206,7 +249,10 @@ export function ExperiencePage() {
                   <h3 className="mt-2 text-base font-semibold text-slate-900">
                     {project.title}
                   </h3>
-                  <p className="mt-1.5 truncate text-sm leading-relaxed text-slate-600">
+                  <p
+                    className="mt-1.5 truncate text-sm leading-relaxed text-slate-600"
+                    title={t(`experience.projects.${project.id}.description`)}
+                  >
                     {t(`experience.projects.${project.id}.description`)}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
@@ -219,15 +265,17 @@ export function ExperiencePage() {
                       </span>
                     ))}
                   </div>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 rounded-lg bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
-                  >
-                    {t("experience.viewProject")}
-                    <ExternalLink aria-hidden="true" className="h-4 w-4" />
-                  </a>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-5 inline-flex items-center gap-2 rounded-lg bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+                    >
+                      {t("experience.viewProject")}
+                      <ExternalLink aria-hidden="true" className="h-4 w-4" />
+                    </a>
+                  )}
                 </div>
                 {project.image ? (
                   <picture className="order-first h-40 w-full shrink-0 border-b border-slate-200 sm:order-last sm:h-auto sm:w-36 sm:border-b-0 sm:border-l">
@@ -258,6 +306,58 @@ export function ExperiencePage() {
                     </span>
                   </div>
                 )}
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="education-heading" className="mt-12">
+          <div className="mb-5 flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-200 text-slate-800">
+              <GraduationCap className="h-5 w-5" />
+            </div>
+            <h2
+              id="education-heading"
+              className="text-xl font-semibold tracking-tight text-slate-900"
+            >
+              {t("experience.educationTitle")}
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {education.map((school) => (
+              <article
+                key={school.id}
+                className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6"
+              >
+                <div
+                  className={`flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl ${
+                    school.fullBleed ? "" : "border border-slate-100 bg-white p-1.5"
+                  }`}
+                >
+                  {school.logo ? (
+                    <img
+                      src={school.logo}
+                      alt={t("experience.logo", {
+                        company: t(`experience.education.${school.id}.school`),
+                      })}
+                      className="h-full w-full object-contain"
+                    />
+                  ) : (
+                    <GraduationCap aria-hidden="true" className="h-6 w-6 text-slate-700" />
+                  )}
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs font-semibold tracking-wide text-slate-700">
+                    {t(`experience.education.${school.id}.period`)}
+                  </p>
+                  <h3 className="mt-1 text-base font-semibold text-slate-900">
+                    {t(`experience.education.${school.id}.school`)} —{" "}
+                    {t(`experience.education.${school.id}.degree`)}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+                    {t(`experience.education.${school.id}.details`)}
+                  </p>
+                </div>
               </article>
             ))}
           </div>

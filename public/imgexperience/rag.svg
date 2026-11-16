@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" font-family="Inter, Arial, Helvetica, sans-serif">
+  <title>Architecture du pipeline ONUtech RAG</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="600" fill="#ffffff"/>
+
+  <!-- ===== 1. Ingestion ===== -->
+  <rect x="10" y="10" width="1180" height="222" rx="10" fill="#fff8f1" stroke="#fdba74"/>
+  <text x="28" y="40" font-size="17" font-weight="700" fill="#9a3412">1. Ingestion des documents</text>
+  <text x="1172" y="40" font-size="14" fill="#9a3412" text-anchor="end">lancée au démarrage (start.sh)</text>
+
+  <g font-size="18" text-anchor="middle">
+    <rect x="20" y="70" width="200" height="120" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+    <text x="120" y="122" font-weight="700" fill="#0c4a6e">Documents PDF</text>
+    <text x="120" y="148" font-size="14" fill="#0c4a6e">src/rag/data</text>
+
+    <rect x="260" y="70" width="200" height="120" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+    <text x="360" y="112" font-weight="700" fill="#9a3412">Extraction du texte</text>
+    <text x="360" y="138" font-size="14" fill="#9a3412">PyPDFLoader</text>
+    <text x="360" y="158" font-size="14" fill="#9a3412">page + nom du fichier</text>
+
+    <rect x="500" y="70" width="200" height="120" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+    <text x="600" y="112" font-weight="700" fill="#9a3412">Découpage (chunks)</text>
+    <text x="600" y="138" font-size="14" fill="#9a3412">morceaux de 500 caractères</text>
+    <text x="600" y="158" font-size="14" fill="#9a3412">chevauchement de 50</text>
+
+    <rect x="740" y="70" width="200" height="120" rx="8" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="840" y="112" font-weight="700" fill="#581c87">Embeddings</text>
+    <text x="840" y="138" font-size="14" fill="#581c87">Google Gemini</text>
+    <text x="840" y="158" font-size="14" fill="#581c87">gemini-embedding-001</text>
+
+    <!-- ChromaDB -->
+    <path d="M980 84v96a100 14 0 0 0 200 0V84" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+    <ellipse cx="1080" cy="84" rx="100" ry="14" fill="#bbf7d0" stroke="#15803d" stroke-width="2"/>
+    <text x="1080" y="134" font-weight="700" fill="#14532d">ChromaDB</text>
+    <text x="1080" y="160" font-size="14" fill="#14532d">vecteurs + métadonnées</text>
+  </g>
+
+  <g stroke="#334155" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M220 130H258"/>
+    <path d="M460 130H498"/>
+    <path d="M700 130H738"/>
+    <path d="M940 130H978"/>
+  </g>
+
+  <!-- ===== 2. Question / réponse ===== -->
+  <rect x="10" y="282" width="1180" height="308" rx="10" fill="#f5f3ff" stroke="#c4b5fd"/>
+  <text x="28" y="312" font-size="17" font-weight="700" fill="#5b21b6">2. Question / réponse</text>
+
+  <g font-size="18" text-anchor="middle">
+    <rect x="20" y="340" width="200" height="120" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+    <text x="120" y="392" font-weight="700" fill="#1e293b">Utilisateur</text>
+    <text x="120" y="418" font-size="14" fill="#1e293b">interface / application</text>
+
+    <rect x="260" y="340" width="200" height="120" rx="8" fill="#e0e7ff" stroke="#4338ca" stroke-width="2"/>
+    <text x="360" y="392" font-weight="700" fill="#312e81">API FastAPI</text>
+    <text x="360" y="418" font-size="14" fill="#312e81">POST /api/v1/ask</text>
+
+    <rect x="500" y="340" width="200" height="120" rx="8" fill="#e0e7ff" stroke="#4338ca" stroke-width="2"/>
+    <text x="600" y="382" font-weight="700" fill="#312e81">Retriever</text>
+    <text x="600" y="408" font-size="14" fill="#312e81">question → embedding</text>
+    <text x="600" y="428" font-size="14" fill="#312e81">recherche des morceaux</text>
+
+    <rect x="740" y="340" width="200" height="120" rx="8" fill="#e0e7ff" stroke="#4338ca" stroke-width="2"/>
+    <text x="840" y="382" font-weight="700" fill="#312e81">Prompt LangChain</text>
+    <text x="840" y="408" font-size="14" fill="#312e81">contexte + question</text>
+    <text x="840" y="428" font-size="14" fill="#312e81">« sinon, dire je ne sais pas »</text>
+
+    <rect x="980" y="340" width="200" height="120" rx="8" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="1080" y="382" font-weight="700" fill="#581c87">LLM Llama 3.3 70B</text>
+    <text x="1080" y="408" font-size="14" fill="#581c87">via Groq</text>
+    <text x="1080" y="428" font-size="14" fill="#581c87">température 0.3</text>
+  </g>
+
+  <g stroke="#334155" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M220 400H258"/>
+    <path d="M460 400H498"/>
+    <path d="M700 400H738"/>
+    <path d="M940 400H978"/>
+    <!-- réponse -->
+    <path d="M1080 460V530H120V462"/>
+  </g>
+  <!-- retriever <-> ChromaDB -->
+  <path d="M640 340L1040 200" stroke="#15803d" stroke-width="2" stroke-dasharray="7 5" fill="none" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="770" y="243" width="170" height="26" rx="13" fill="#ffffff" stroke="#15803d"/>
+  <text x="855" y="261" font-size="14" fill="#14532d" text-anchor="middle">morceaux pertinents</text>
+
+  <rect x="500" y="517" width="200" height="26" rx="13" fill="#ffffff" stroke="#334155"/>
+  <text x="600" y="535" font-size="14" fill="#1e293b" text-anchor="middle">réponse + sources</text>
+</svg>
